@@ -1,0 +1,15 @@
+services:
+    jlinktree-app:
+        build: .
+        container_name: jlinktree
+        restart: unless-stopped
+        ports:
+            - '3006:80'
+        environment:
+            NODE_ENV: production
+        networks:
+            - internal
+
+networks:
+    internal:
+        driver: bridge
